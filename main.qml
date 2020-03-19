@@ -63,8 +63,8 @@ ApplicationWindow {
             lines.push({
                            x1: x,
                            y1: y,
-                           x2: x - Math.sin((hour * 30 + (minutes / 60 * 30) + 180) / 180 * Math.PI)  * (length - 20),
-                           y2: y + Math.cos((hour * 30 + (minutes / 60 * 30) + 180) / 180 * Math.PI)  * (length - 20),
+                           x2: x - Math.sin((hour * 30 + (minutes / 60 * 30) + 180) / 180 * Math.PI)  * (length - 40),
+                           y2: y + Math.cos((hour * 30 + (minutes / 60 * 30) + 180) / 180 * Math.PI)  * (length - 40),
                            color: "red"
                        });
             lines.push({
@@ -77,8 +77,8 @@ ApplicationWindow {
             lines.push({
                            x1: x,
                            y1: y,
-                           x2: x - Math.sin((seconds * 6 + (millisec / 1000 * 6) + 180) / 180 * Math.PI)  * (length + 20),
-                           y2: y + Math.cos((seconds * 6 + (millisec / 1000 * 6) + 180) / 180 * Math.PI)  * (length + 20),
+                           x2: x - Math.sin((seconds * 6 + (millisec / 1000 * 6) + 180) / 180 * Math.PI)  * (length),
+                           y2: y + Math.cos((seconds * 6 + (millisec / 1000 * 6) + 180) / 180 * Math.PI)  * (length),
                            color: "gray"
                        });
             drawingCanvas.draw(lines);
