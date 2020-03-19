@@ -81,90 +81,34 @@ ApplicationWindow {
                            y2: y + Math.cos((seconds * 6 + (millisec / 1000 * 6) + 180) / 180 * Math.PI)  * (length),
                            color: "gray"
                        });
-            lines.push({
-                           x1: x,
-                           y1: y + length + 5,
-                           x2: x,
-                           y2: y + length + 30,
-                           color: "black"
-                       });
-            lines.push({
-                           x1: x,
-                           y1: y - length - 5,
-                           x2: x,
-                           y2: y - length - 30,
-                           color: "black"
-                       });
-            lines.push({
-                           x1: x + length + 5,
-                           y1: y,
-                           x2: x + length + 30,
-                           y2: y,
-                           color: "black"
-                       });
-            lines.push({
-                           x1: x - length - 5,
-                           y1: y,
-                           x2: x - length - 30,
-                           y2: y,
-                           color: "black"
-                       });
-            lines.push({
-                           x1: x - Math.sin(210 / 180 * Math.PI)  * (length + 10),
-                           y1: y + Math.cos(210 / 180 * Math.PI)  * (length + 10),
-                           x2: x - Math.sin(210 / 180 * Math.PI)  * (length + 25),
-                           y2: y + Math.cos(210 / 180 * Math.PI)  * (length + 25),
-                           color: "black"
-                       });
-            lines.push({
-                           x1: x - Math.sin(240 / 180 * Math.PI)  * (length + 10),
-                           y1: y + Math.cos(240 / 180 * Math.PI)  * (length + 10),
-                           x2: x - Math.sin(240 / 180 * Math.PI)  * (length + 25),
-                           y2: y + Math.cos(240 / 180 * Math.PI)  * (length + 25),
-                           color: "black"
-                       });
-            lines.push({
-                           x1: x - Math.sin(300 / 180 * Math.PI)  * (length + 10),
-                           y1: y + Math.cos(300 / 180 * Math.PI)  * (length + 10),
-                           x2: x - Math.sin(300 / 180 * Math.PI)  * (length + 25),
-                           y2: y + Math.cos(300 / 180 * Math.PI)  * (length + 25),
-                           color: "black"
-                       });
-            lines.push({
-                           x1: x - Math.sin(330 / 180 * Math.PI)  * (length + 10),
-                           y1: y + Math.cos(330 / 180 * Math.PI)  * (length + 10),
-                           x2: x - Math.sin(330 / 180 * Math.PI)  * (length + 25),
-                           y2: y + Math.cos(330 / 180 * Math.PI)  * (length + 25),
-                           color: "black"
-                       });
-            lines.push({
-                           x1: x - Math.sin(30 / 180 * Math.PI)  * (length + 10),
-                           y1: y + Math.cos(30 / 180 * Math.PI)  * (length + 10),
-                           x2: x - Math.sin(30 / 180 * Math.PI)  * (length + 25),
-                           y2: y + Math.cos(30 / 180 * Math.PI)  * (length + 25),
-                           color: "black"
-                       });
-            lines.push({
-                           x1: x - Math.sin(60 / 180 * Math.PI)  * (length + 10),
-                           y1: y + Math.cos(60 / 180 * Math.PI)  * (length + 10),
-                           x2: x - Math.sin(60 / 180 * Math.PI)  * (length + 25),
-                           y2: y + Math.cos(60 / 180 * Math.PI)  * (length + 25),
-                           color: "black"
-                       });
-            lines.push({
-                           x1: x - Math.sin(120 / 180 * Math.PI)  * (length + 10),
-                           y1: y + Math.cos(120 / 180 * Math.PI)  * (length + 10),
-                           x2: x - Math.sin(120 / 180 * Math.PI)  * (length + 25),
-                           y2: y + Math.cos(120 / 180 * Math.PI)  * (length + 25),
-                           color: "black"
-                       });
-            lines.push({
-                           x1: x - Math.sin(150 / 180 * Math.PI)  * (length + 10),
-                           y1: y + Math.cos(150 / 180 * Math.PI)  * (length + 10),
-                           x2: x - Math.sin(150 / 180 * Math.PI)  * (length + 25),
-                           y2: y + Math.cos(150 / 180 * Math.PI)  * (length + 25),
-                           color: "black"
-                       });
+
+            for (var i = 0; i < 360; i++) {
+                if (!(i % 90)) {
+                    lines.push({
+                                   x1: x - Math.sin(i / 180 * Math.PI)  * (length + 10),
+                                   y1: y + Math.cos(i / 180 * Math.PI)  * (length + 10),
+                                   x2: x - Math.sin(i / 180 * Math.PI)  * (length + 50),
+                                   y2: y + Math.cos(i / 180 * Math.PI)  * (length + 50),
+                                   color: "black"
+                               });
+                } else if (!(i % 30)) {
+                    lines.push({
+                                   x1: x - Math.sin(i / 180 * Math.PI)  * (length + 10),
+                                   y1: y + Math.cos(i / 180 * Math.PI)  * (length + 10),
+                                   x2: x - Math.sin(i / 180 * Math.PI)  * (length + 35),
+                                   y2: y + Math.cos(i / 180 * Math.PI)  * (length + 35),
+                                   color: "black"
+                               });
+                } else if (!(i % 6)) {
+                    lines.push({
+                                   x1: x - Math.sin(i / 180 * Math.PI)  * (length + 10),
+                                   y1: y + Math.cos(i / 180 * Math.PI)  * (length + 10),
+                                   x2: x - Math.sin(i / 180 * Math.PI)  * (length + 15),
+                                   y2: y + Math.cos(i / 180 * Math.PI)  * (length + 15),
+                                   color: "black"
+                               });
+                }
+            }
 
             drawingCanvas.draw(lines);
         }
